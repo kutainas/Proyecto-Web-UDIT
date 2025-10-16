@@ -7,32 +7,48 @@ section {
 }
 
 header {
-  background: #fff;
+  background: #0011ff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 5;
   left: 5;
+  bottom: 5;
   width: 100%;
   z-index: 1000;
-  padding: 2rem;
+  padding: 3rem;
+  
 }
 nav {
   position: fixed;
   top: 0;
   z-index: 1000;
+  justify-content: center;
 }
 nav ul {
+    display: flex;
+  justify-content: center;
+  padding: 2rem;             
+  margin: 0;              
   list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+  
 }
 nav ul li {
-  margin-right: 1rem;
+  margin-right: 25rem;
+    margin: 0 10px;
+  padding: 8px 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+  nav ul li:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el mouse */
+}
+
 nav ul li a {
   text-decoration: none;
-  color: #0004fc;
+  color: #ffffff;
 }
 
 .screenshots {
@@ -59,8 +75,8 @@ nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #222;
+  height: 30rem;
+  background: #222222;
   color: #fff;
 }
 
@@ -70,6 +86,15 @@ nav ul li a {
   border-right: 0.15em solid currentColor;
   animation: typing 3s steps(30, end) forwards,
     blink-caret 0.75s step-end infinite;
+}
+
+h2 {
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  color:blue;
 }
 
 @keyframes typing {
