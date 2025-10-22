@@ -3,7 +3,124 @@ body {
 }
 
 section {
-  height: 90vh;
+  min-height: 100vh; /* allow sections to size to content, avoid large empty gaps */
+}
+
+/* Layout wrapper inside each section to align iframe and text side-by-side */
+.section-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch; /* make children same height */
+  padding: 2rem;
+}
+
+.section-inner .content {
+  flex: 0 1 50%; /* text/content column: exactly half */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-inner .content .analysis-text {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.section-inner .media {
+  flex: 0 1 50%; /* iframe column: exactly half */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center iframe in its column */
+}
+
+.section-inner .media iframe {
+  width: 100%;
+  height: 100%;
+  max-height: 1000px; /* doubled max height to allow taller iframes */
+  border: 0;
+}
+
+@media (max-width: 799px) {
+  .section-inner {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .section-inner .content,
+  .section-inner .media {
+    flex: 1 1 auto;
+  }
+  .section-inner .media iframe {
+    height: 300px;
+  }
+}
+
+/* Full-width screenshots row below the two-column layout */
+.section-screenshots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+.section-screenshots img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+/* Make sure the screenshots row sits below the two-column block without overlap */
+section {
+  overflow: visible;
+}
+
+@media (max-width: 899px) {
+  .section-screenshots {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .section-screenshots {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Full-width iframe and text blocks (stacked order) */
+.full-iframe {
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+.full-iframe iframe {
+  width: 100%;
+  height: 800px;
+  max-height: 1000px;
+  border: 0;
+  display: block;
+}
+.full-text {
+  width: 100%;
+  padding: 1rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+}
+.full-text .analysis-text {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+@media (max-width: 799px) {
+  .full-iframe iframe {
+    height: 600px;
+  }
 }
 
 header {
@@ -84,8 +201,75 @@ nav ul li a {
   overflow: hidden;
   white-space: nowrap;
   border-right: 0.15em solid currentColor;
+  font-size: 4rem; /* larger main title */
+  line-height: 1.05;
   animation: typing 3s steps(30, end) forwards,
     blink-caret 0.75s step-end infinite;
+}
+
+@media (max-width: 799px) {
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+/* Iframes: align to the right on wide screens, full-width on small screens */
+section iframe {
+  display: block; /* treat iframe like a block to apply margins */
+  width: 50%;
+  max-width: 100%;
+  height: 800px; /* doubled fallback height */
+  margin-left: auto; /* push to the right */
+  margin-right: 2rem; /* small gap from right edge */
+  margin-bottom: 2.5rem; /* add extra space before screenshots */
+  border: none;
+}
+
+@media (max-width: 799px) {
+  section iframe {
+    width: 100%;
+    margin: 0 0 1.25rem 0; /* slightly larger stack spacing */
+    height: 600px; /* doubled mobile iframe height */
+  }
+}
+
+/* Ensure full-iframe iframes keep full width but use half the previous height */
+.full-iframe iframe {
+  width: 100%;
+  height: 400px; /* half of previous 800px */
+  max-height: 500px;
+}
+
+@media (max-width: 799px) {
+  .full-iframe iframe {
+    height: 300px; /* half of previous mobile 600px */
+  }
+}
+
+/* Ensure screenshots section has some top spacing when images follow an iframe */
+.screenshots {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 800px) {
+  .screenshots {
+    margin-top: 1rem;
+  }
+}
+
+/* Screenshots that live inside the media column (below the iframe) */
+.media .screenshots {
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 800px) {
+  .media .screenshots {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
 h2 {
@@ -94,7 +278,17 @@ h2 {
   font-style: normal;
   padding-left: 2rem;
   padding-top: 2rem;
-  color:blue;
+  font-size: 2.4rem; /* larger section titles */
+  line-height: 1.1;
+  color: blue;
+}
+
+@media (max-width: 799px) {
+  h2 {
+    font-size: 1.6rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
 }
 
 @keyframes typing {
