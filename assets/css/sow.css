@@ -41,7 +41,8 @@ section {
   width: 100%;
   height: 100%;
   max-height: 1000px; /* doubled max height to allow taller iframes */
-  border: 0;
+  border: 4px solid #0011ff; /* azul solicitado */
+  border-radius: 12px;
 }
 
 @media (max-width: 799px) {
@@ -138,25 +139,31 @@ header {
 nav {
   position: fixed;
   top: 0;
+  right: 0; /* anchor nav to right edge of viewport */
   z-index: 1000;
   justify-content: center;
 }
 nav ul {
+  position: fixed; /* align relative to viewport */
+  top: 1.4rem; /* moved slightly down to align lower */
+    right: 0;
     display: flex;
-  justify-content: center;
-  padding: 2rem;             
-  margin: 0;              
+  justify-content: flex-end; /* items right-justified */
+  padding: 0 1rem; /* horizontal padding only */
+  margin: 0;
   list-style: none;
-  
+  align-items: flex-end; /* align items to container bottom */
 }
 nav ul li {
-  margin-right: 25rem;
-    margin: 0 10px;
-  padding: 8px 15px;
+  margin: 0 10px; /* spacing between items */
+  padding: 0 15px; /* horizontal padding only; vertical size via line-height */
   border: 2px solid white;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  line-height: 3rem; /* make li height match .header-left on desktop */
+  display: flex;
+  align-items: center; /* vertically center text inside li */
 }
 
   nav ul li:hover {
@@ -166,6 +173,45 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #ffffff;
+}
+
+/* Texto a la izquierda del header */
+.header-left {
+  position: fixed;
+  left: 1rem;
+  top: 1.4rem;
+  z-index: 1001;
+  color: #ffffff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: 'Bitcount Grid Single', sans-serif;
+  font-size: 3rem; /* aumentado */
+  line-height: 1.05;
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  text-align: left;
+}
+
+/* Ajustes para evitar solapamiento entre el texto y el nav */
+@media (min-width: 800px) {
+  nav ul {
+    padding-right: 4rem; /* deja espacio al texto izquierdo (.header-left) */
+  }
+}
+
+@media (max-width: 799px) {
+  .header-left {
+    left: 0.75rem;
+    top: 1.15rem;
+    font-size: 2rem; /* aumentado en móvil */
+  }
+  nav ul {
+    top: 1.15rem; /* match header-left top */
+    padding: 0 0.75rem;
+  }
+  nav ul li {
+    line-height: 2rem; /* match header-left on mobile (increased size) */
+  }
 }
 
 .screenshots {
@@ -185,7 +231,7 @@ nav ul li a {
 }
 @media (min-width: 800px) {
   .analysis-text {
-    columns: 2;
+    columns: 4;
   }
 }
 .cover {
@@ -222,7 +268,8 @@ section iframe {
   margin-left: auto; /* push to the right */
   margin-right: 2rem; /* small gap from right edge */
   margin-bottom: 2.5rem; /* add extra space before screenshots */
-  border: none;
+  border: 4px solid #0011ff;
+  border-radius: 12px;
 }
 
 @media (max-width: 799px) {
@@ -238,6 +285,8 @@ section iframe {
   width: 100%;
   height: 400px; /* half of previous 800px */
   max-height: 500px;
+  border: 4px solid #0011ff;
+  border-radius: 12px;
 }
 
 @media (max-width: 799px) {
