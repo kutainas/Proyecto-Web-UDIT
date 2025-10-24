@@ -328,7 +328,7 @@ nav ul li a {
   font-weight: 700;
   font-style: normal;
   font-family: 'Bitcount Grid Single', sans-serif;
-  font-size: 3rem; /* aumentado */
+  font-size: 2.4rem; /* un poco más pequeño */
   line-height: 1.05;
   padding: 0.25rem 0.5rem;
   background: transparent;
@@ -346,7 +346,7 @@ nav ul li a {
   .header-left {
     left: 0.75rem;
     top: 1.15rem;
-    font-size: 2rem; /* aumentado en móvil */
+    font-size: 1.8rem; /* un poco más pequeño en móvil */
   }
   nav ul {
     top: 1.15rem; /* match header-left top */
@@ -387,24 +387,143 @@ nav ul li a {
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
 }
+
 .cover {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* apilar panorama y botón verticalmente */
   align-items: center;
-  height: 30rem;
-  background: #222222;
-  color: #fff;
+  justify-content: center;
+  background: #ffffff; /* fondo blanco para el carrusel */
+  color: #0011ff;
+  padding: 1.25rem 0;
+  overflow: hidden;
 }
 
-.title {
+/* Panorama — carrusel panorámico de texto (left → right) */
+.panorama {
+  width: 100%;
   overflow: hidden;
+}
+.panorama .track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  /* animación que desplaza la pista de 0% a -50% (derecha → izquierda) */
+  animation: scrollLTR 60s linear infinite; /* más lenta */
+}
+.panorama .loop {
+  display: flex;
+  gap: 4rem; /* más espacio entre un texto y el siguiente */
+}
+.panorama .item {
+  color: #0011ff; /* texto azul */
+  background: #ffffff; /* fondo blanco */
+  font-weight: 700;
+  font-family: 'Roboto Condensed', 'Bitcount Grid Single', sans-serif;
+  /* Mucho más grande: escala responsiva con un máximo alto */
+  font-size: clamp(4rem, 12vw, 12rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase; /* solo mayúsculas */
+  padding: 0.06rem 0.18rem; /* franja aún más pequeña */
   white-space: nowrap;
-  border-right: 0.15em solid currentColor;
-  font-size: 4rem; /* larger main title */
-  line-height: 1.05;
-  color: #ffffff; /* amarillo para el texto y caret */
-  animation: typing 3s steps(30, end) forwards,
-    blink-caret 0.75s step-end infinite;
+  border-radius: 0; /* franja plana */
+}
+
+@keyframes scrollLTR {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Respetar preferencia de reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .panorama .track {
+    animation: none;
+    transform: translateX(0);
+  }
+}
+
+/* Botón circular de scroll hacia abajo (debajo del carrusel) */
+.scroll-down {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 6rem auto 0 auto; /* mayor separación: botón más abajo */
+  background: #0011ff;
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,17,255,0.14);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.scroll-down svg {
+  display: block;
+}
+.scroll-down:focus {
+  outline: 3px solid rgba(0,17,255,0.18);
+  outline-offset: 4px;
+}
+.scroll-down:hover {
+  transform: translateY( -6px );
+  box-shadow: 0 12px 28px rgba(0,17,255,0.18);
+}
+
+/* pequeña animación de rebote para llamar la atención */
+.scroll-down { animation: bounce 2.8s ease-in-out infinite; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 799px) {
+  .scroll-down { width: 52px; height: 52px; margin-top: 3.5rem; }
+  .scroll-down svg { width: 20px; height: 20px; }
+}
+
+/* Scroll-up button inside footer (centered) */
+.scroll-up {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: #0011ff;
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,17,255,0.14);
+  transition: opacity 240ms ease, transform 240ms ease, box-shadow 200ms ease;
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  pointer-events: none;
+  z-index: 1200;
+}
+.scroll-up svg { display:block; }
+.scroll-up:focus { outline: 3px solid rgba(0,17,255,0.18); outline-offset: 4px; }
+.scroll-up:hover { transform: translateY(-6px) scale(1); box-shadow: 0 12px 28px rgba(0,17,255,0.18); }
+
+/* visible state when user has scrolled down */
+.scroll-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+@media (max-width: 799px) {
+  .scroll-up { width: 52px; height: 52px; bottom: 16px; right: 16px; }
+  .scroll-up svg { width: 20px; height: 20px; }
+}
+
+@media (max-width: 799px) {
+  .panorama .item {
+    /* Aumentar también en móvil pero con límites razonables */
+    font-size: clamp(2rem, 8vw, 4rem);
+    padding: 0.12rem 0.25rem;
+  }
 }
 
 @media (max-width: 799px) {
@@ -505,5 +624,29 @@ h2 {
 @keyframes blink-caret {
   50% {
     border-color: transparent;
+  }
+}
+
+/* Badges para los encabezados de análisis (h3): versión compacta sin esquinas redondeadas */
+.analysis-text h3,
+.analisis h3 {
+  display: inline-block;
+  background: #0011ff; /* mismo azul que el nav */
+  color: #ffffff;
+  padding: 0.35rem 0.7rem; /* un poco más grande */
+  border-radius: 0; /* esquinas cuadradas */
+  margin: 0 0 1rem 0;
+  box-shadow: none; /* apariencia plana */
+  font-weight: 700;
+  line-height: 1;
+  font-size: 1.05rem; /* ligeramente mayor */
+  vertical-align: middle;
+}
+
+@media (max-width: 799px) {
+  .analysis-text h3,
+  .analisis h3 {
+    padding: 0.28rem 0.6rem;
+    font-size: 1rem;
   }
 }

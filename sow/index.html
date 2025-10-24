@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="../assets/css/index.css" />
     <!-- Google Font: Bitcount Grid Single -->
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <!-- Google Font: Roboto Condensed (used for panorama) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/sow.css" />
   </head>
-  <body>
+  <body id="top">
     <header>
   <!-- Texto justificado a la izquierda dentro del header -->
   <div class="header-left">Análisis Web. Lucas Ucelay</div>
@@ -29,7 +31,30 @@
 
     <main>
       <section class="cover">
-        <h1 class="title">Some Outstanding Webs</h1>
+        <!-- Carrusel panorámico de texto (izquierda → derecha) -->
+        <div class="panorama" aria-label="carrusel panorámico">
+          <div class="track" aria-hidden="true">
+            <!-- secuencia original (se duplica para crear loop continuo) -->
+            <div class="loop">
+              <span class="item">SOME OUTSTANDING WEBS *</span>
+              <span class="item">SOME OUTSTANDING WEBS *</span>
+              <span class="item">SOME OUTSTANDING WEBS *</span>
+              <span class="item">SOME OUTSTANDING WEBS *</span>
+            </div>
+            <div class="loop">
+              <span class="item">SOME OUTSTANDING WEBS *</span>
+              <span class="item">SOME OUTSTANDING WEBS *</span>
+              <span class="item">SOME OUTSTANDING WEBS *</span>
+              <span class="item">SOME OUTSTANDING WEBS *</span>
+            </div>
+          </div>
+        </div>
+        <!-- Botón circular para bajar al primer apartado -->
+        <a href="#site-Harry Solaris" class="scroll-down" aria-label="Ir a Harry Solaris">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </section>
       <!-- Secciones individuales para cada sitio -->
       <section id="site-Harry Solaris">
@@ -38,10 +63,10 @@
           <iframe src="https://harrysolaris.design/" title="harrysolaris" loading="lazy"></iframe>
         </div>
         <div class="section-screenshots">
-          <img src="/assets/sow/harrysolaris.png" alt="Captura de pantalla 1" />
-          <img src="/assets/sow/harrysolaris.png" alt="Captura de pantalla 2" />
-          <img src="/assets/sow/harrysolaris.png" alt="Captura de pantalla 3" />
-          <img src="/assets/sow/harrysolaris.png" alt="Captura de pantalla 4" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.35.19.png" alt="Captura de pantalla 1" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.35.39.png" alt="Captura de pantalla 2" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.35.58.png" alt="Captura de pantalla 3" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.36.08.png" alt="Captura de pantalla 4" />
         </div>
         <div class="full-text">
       <div class="analysis-text">
@@ -120,10 +145,10 @@
           <iframe src="https://www.sandstudio.shop/?ref=onepagelove" title="Sand Studio" loading="lazy"></iframe>
         </div>
         <div class="section-screenshots">
-          <img src="https://ik.imagekit.io/4e9wbrqbyt/aaa.png" alt="Categorias" />
-          <img src="/assets/sow/sandstudio.png" alt="Captura de pantalla 2" />
-          <img src="/assets/sow/sandstudio.png" alt="Captura 3" />
-          <img src="/assets/sow/sandstudio.png" alt="Captura 4" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.38.05.png" alt="Categorias" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.38.27.png" alt="Captura de pantalla 2" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.38.41.png" alt="Captura 3" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.38.52.png" alt="Captura 4" />
         </div>
         <div class="full-text">
           <div class="analysis-text">
@@ -146,7 +171,7 @@
 
   <h3>Visual</h3>
   <p>
-    A nivel visual, predomina una paleta neutra, con un blanco de fondo y un negro grisáceo para los botones y textos que dejan todo el protagonismo a las imágenes de los productos. Esto refuerza la idea de que el contenido es lo importante. La tipografía es simple, sin serifa, lo que aporta modernidad y legibilidad. El logotipo también es discreto: cumple su función sin imponerse al resto del contenido. En general, el diseño transmite una identidad sobria y racional, acorde con una marca que busca ser funcional y confiable más que emocional.
+    A nivel visual, predomina una paleta neutra, con un blanco de fondo y un negro grisáceo para los botones y textos que dejan todo el protagonismo a las imágenes de los productos. Esto refuerza la idea de que el contenido es lo importante.La tipografía es simple, sin serifa, lo que aporta modernidad y legibilidad. El logotipo también es discreto: cumple su función sin imponerse al resto del contenido. En general, el diseño transmite una identidad sobria y racional, acorde con una marca que busca ser funcional y confiable más que emocional.
   </p>
 
   <h3>Interacción</h3>
@@ -156,17 +181,17 @@
 
   <h3>Usabilidad</h3>
   <p>
-    Uno de los puntos fuertes de la web. Es muy fácil orientarse y encontrar lo que uno busca, sin secciones redundantes ni pasos innecesarios que solo distairían.  La legibilidad es alta, tanto por la elección tipográfica como por el equilibrio y los espacios en blanco. En cuanto a accesibilidad, cumple con lo básico (buen contraste y jerarquía visual clara). La experiencia en formato móvil es igualmente buena porque el diseño es responsive y se adapta bien manteniendo la funcionalidad.
+    Uno de los puntos fuertes de la web. Es muy fácil orientarse y encontrar lo que uno busca, sin secciones redundantes ni pasos innecesarios que solo distairían. La legibilidad es alta, tanto por la elección tipográfica como por el equilibrio y los espacios en blanco. En cuanto a accesibilidad, cumple con lo básico (buen contraste y jerarquía visual clara). La experiencia en formato móvil es igualmente buena porque el diseño es responsive y se adapta bien manteniendo la funcionalidad.
   </p>
 
   <h3>Técnico</h3>
   <p>
-    Desde el punto de vista técnico, la web está optimizada para la velocidad de carga, algo fundamental en un entorno de e-commerce. Los elementos gráficos son ligeros y el uso de scripts se limita a lo necesario. Esto le permite mantener buenos resultados en Core Web Vitals, sobre todo en métricas como LCP (tiempo hasta el contenido principal visible) y FID (tiempo de respuesta). En general, el sitio demuestra un buen equilibrio entre rendimiento y estética, sin sacrificar ni la funcionalidad ni la calidad visual.
+    Desde el punto de vista técnico, la web está optimizada para la velocidad de carga, algo fundamental en un entorno de e-commerce. Los elementos gráficos son ligeros y el uso de scripts se limita a lo necesario.Esto le permite mantener buenos resultados en Core Web Vitals, sobre todo en métricas como LCP (tiempo hasta el contenido principal visible) y FID (tiempo de respuesta).En general, el sitio demuestra un buen equilibrio entre rendimiento y estética, sin sacrificar ni la funcionalidad ni la calidad visual.
   </p>
 
   <h3>Criterios de excelencia</h3>
   <p>
-    A mi parecer, la creatividad no reside en la ornamentación del trabajo, sino en la coherencia con la que presenta el contenido. Es un ejemplo de diseño que pone la forma al servicio de la función, y eso también es creatividad. El contenido está centrado en el producto, con descripciones cortas y directas, buscando convencerte de comprar su producto. En cuanto a experiencia de usuario (UX), se nota que la web está diseñada pensando en la conversión y en la reducción de fricción: cada paso está orientado a que el usuario llegue al objetivo final con el menor esfuerzo posible, lo que para mi es su mayor pro. 
+    A mi parecer, la creatividad no reside en la ornamentación del trabajo, sino en la coherencia con la que presenta el contenido. Es un ejemplo de diseño que pone la forma al servicio de la función, y eso también es creatividad.El contenido está centrado en el producto, con descripciones cortas y directas, buscando convencerte de comprar su producto.En cuanto a experiencia de usuario (UX), se nota que la web está diseñada pensando en la conversión y en la reducción de fricción: cada paso está orientado a que el usuario llegue al objetivo final con el menor esfuerzo posible, lo que para mi es su mayor pro.
   </p>
 
   <h3>Conclusión — Fortalezas, debilidades y aprendizajes</h3>
@@ -187,10 +212,10 @@
           <iframe src="https://nlc.obys.agency/" title="warhol-arts" loading="lazy"></iframe>
         </div>
         <div class="section-screenshots">
-          <img src="/assets/sow/warhol-arts.png" alt="Captura de pantalla 1" />
-          <img src="/assets/sow/warhol-arts.png" alt="Captura de pantalla 2" />
-          <img src="/assets/sow/warhol-arts.png" alt="Captura 3" />
-          <img src="/assets/sow/warhol-arts.png" alt="Captura 4" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.40.05.png" alt="Captura de pantalla 1" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.40.19.png" alt="Captura de pantalla 2" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.40.37.png" alt="Captura 3" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.41.00.png" alt="Captura 4" />
         </div>
         <div class="full-text">
           <div class="analysis-text">
@@ -208,32 +233,32 @@
 
   <h3>Estructura</h3>
   <p>
-    La página está organizada en distintas secciones que siguen un orden lógico: inicio con una presentación de la marca, apartados sobre su filosofía y servicios, el equipo, proyectos destacados y contacto. Cada bloque ocupa la pantalla completa, con una navegación fluida tipo scroll storytelling, que va revelando la información paso a paso. La jerarquía visual está muy clara: titulares grandes para cada sección y textos breves que acompañan, lo que ayuda a mantener la atención sin saturar demasiado al usuario.
+    La página está organizada en distintas secciones que siguen un orden lógico: inicio con una presentación de la marca, apartados sobre su filosofía y servicios, el equipo, proyectos destacados y contacto.Cada bloque ocupa la pantalla completa, con una navegación fluida tipo scroll storytelling, que va revelando la información paso a paso.La jerarquía visual está muy clara: titulares grandes para cada sección y textos breves que acompañan, lo que ayuda a mantener la atención sin saturar demasiado al usuario.
   </p>
 
   <h3>Visual</h3>
   <p>
-    El estilo visual se basa en una paleta muy contrastada, dominada por blancos, grises y acentos oscuros que refuerzan la seriedad del mensaje. A esto le añaden los toques de color son, usados solo para resaltar elementos importantes como la portada, el apartado de contacto o palabras clave. La tipografía combina sans serif limpias con un uso muy medido del espacio en blanco. Esto transmite una imagen de marca cuidada y moderna, pero sin distracciones. En resumidas cuentas, la estética comunica precisión, claridad y profesionalismo, valores asociados al mundo financiero.
+    El estilo visual se basa en una paleta muy contrastada, dominada por blancos, grises y acentos oscuros que refuerzan la seriedad del mensaje. A esto le añaden los toques de color son, usados solo para resaltar elementos importantes como la portada, el apartado de contacto o palabras clave.La tipografía combina sans serif limpias con un uso muy medido del espacio en blanco. Esto transmite una imagen de marca cuidada y moderna, pero sin distracciones. En resumidas cuentas, la estética comunica precisión, claridad y profesionalismo, valores asociados al mundo financiero.
   </p>
 
   <h3>Interacción</h3>
   <p>
-    Las animaciones están muy bien integradas: hay transiciones suaves entre secciones, efectos de desplazamiento que acompañan el contenido y pequeños movimientos en imágenes o títulos que aportan dinamismo. Nada resulta gratuito o excesivo y se nota que el objetivo es mantener el interés del usuario sin romper la sensación de orden. Las microinteracciones refuerzan la navegación, y el desplazamiento fluido ayuda a seguir el hilo narrativo. Aquí los efectos no son decorativos, sino que apoyan el mensaje.  Sin duda me quedaría con la animación del logo NLC nada más entrar a la web, me parece perfecta.
+    Las animaciones están muy bien integradas: hay transiciones suaves entre secciones, efectos de desplazamiento que acompañan el contenido y pequeños movimientos en imágenes o títulos que aportan dinamismo.Nada resulta gratuito o excesivo y se nota que el objetivo es mantener el interés del usuario sin romper la sensación de orden.Las microinteracciones refuerzan la navegación, y el desplazamiento fluido ayuda a seguir el hilo narrativo. Aquí los efectos no son decorativos, sino que apoyan el mensaje. Sin duda me quedaría con la animación del logo NLC nada más entrar a la web, me parece perfecta.
   </p>
 
   <h3>Usabilidad</h3>
   <p>
-    El sitio es muy intuitivo de usar. La información está bien jerarquizada, el texto es legible y no hay barreras para comprender de qué trata la marca. Además, el tiempo de carga es razonable, incluso con los efectos visuales activos. Como punto de mejora, algunas secciones con texto muy pequeño o bajo contraste podrían dificultar la lectura en pantallas de menor calidad. En general, el diseño prioriza la experiencia del usuario, especialmente de un público profesional que busca información clara y confianza.
+    El sitio es muy intuitivo de usar. La información está bien jerarquizada, el texto es legible y no hay barreras para comprender de qué trata la marca.Además, el tiempo de carga es razonable, incluso con los efectos visuales activos.Como punto de mejora, algunas secciones con texto muy pequeño o bajo contraste podrían dificultar la lectura en pantallas de menor calidad.En general, el diseño prioriza la experiencia del usuario, especialmente de un público profesional que busca información clara y confianza.
   </p>
 
   <h3>Técnico</h3>
   <p>
-    Desde el punto de vista técnico, el sitio muestra un buen equilibrio entre rendimiento y estética. Los vídeos y animaciones están optimizados para no entorpecer la navegación, y la estructura HTML parece limpia y bien ordenada. Los Core Web Vitals probablemente sean estables: el LCP (tiempo hasta el contenido principal) se mantiene bajo gracias al uso eficiente de recursos, y las animaciones no generan saltos visuales que afecten el CLS (estabilidad visual).
+    Desde el punto de vista técnico, el sitio muestra un buen equilibrio entre rendimiento y estética.Los vídeos y animaciones están optimizados para no entorpecer la navegación, y la estructura HTML parece limpia y bien ordenada.Los Core Web Vitals probablemente sean estables: el LCP (tiempo hasta el contenido principal) se mantiene bajo gracias al uso eficiente de recursos, y las animaciones no generan saltos visuales que afecten el CLS (estabilidad visual).
   </p>
 
   <h3>Criterios de excelencia</h3>
   <p>
-    La creatividad en esta web se expresa desde el mundo gráfico. Usando colores llamativos para destacar sobre el uso de tipografías más “rebuscadas”, su fuerza está en la consistencia visual y narrativa. El contenido está muy bien adaptado a su público objetivo: transmite profesionalidad y confianza sin recurrir a lenguaje técnico excesivo. En cuanto a experiencia de usuario, el sitio logra que la navegación sea fluida, coherente y visualmente atractiva. Es un ejemplo claro de cómo un diseño puede ser sofisticado y funcional al mismo tiempo, sin perder el equilibrio entre forma y propósito. Por así decirlo, es un poco la combinación entre lo bueno de la primera web y lo bueno de la segunda que ya hemos analizado.
+    La creatividad en esta web se expresa desde el mundo gráfico. Usando colores llamativos para destacar sobre el uso de tipografías más “rebuscadas”, su fuerza está en la consistencia visual y narrativa.El contenido está muy bien adaptado a su público objetivo: transmite profesionalidad y confianza sin recurrir a lenguaje técnico excesivo.En cuanto a experiencia de usuario, el sitio logra que la navegación sea fluida, coherente y visualmente atractiva.Es un ejemplo claro de cómo un diseño puede ser sofisticado y funcional al mismo tiempo, sin perder el equilibrio entre forma y propósito. Por así decirlo, es un poco la combinación entre lo bueno de la primera web y lo bueno de la segunda que ya hemos analizado.
   </p>
 
   <h3>Conclusión — Fortalezas, debilidades y aprendizajes</h3>
@@ -254,10 +279,10 @@
           <iframe src="https://landonorris.com/" title="landonorris" loading="lazy"></iframe>
         </div>
         <div class="section-screenshots">
-          <img src="/assets/sow/Lando Norris.png" alt="Captura 1" />
-          <img src="/assets/sow/Lando Norris.png" alt="Captura 2" />
-          <img src="/assets/sow/Lando Norris.png" alt="Captura 3" />
-          <img src="/assets/sow/Lando Norris.png" alt="Captura 4" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.42.09.png" alt="Captura 1" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.42.25.png" alt="Captura 2" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.42.42.png" alt="Captura 3" />
+          <img src="https://ik.imagekit.io/4e9wbrqbyt/Captura%20de%20pantalla%202025-10-24%20a%20las%2016.42.53.png" alt="Captura 4" />
         </div>
         <div class="full-text">
           <div class="analysis-text">
@@ -275,32 +300,32 @@
 
   <h3>Estructura</h3>
   <p>
-    La estructura está pensada para cubrir varios objetivos. Mostrar la carrera del piloto, ofrecer noticias y vídeos, y vender merchandising. El menú organiza bien estas secciones, y el flujo de navegación es lógico. Primero la parte visual (hero, fotos, vídeos), después las novedades, y por último el área de tienda. El contenido se presenta de forma clara, aunque en algunos momentos el exceso de estímulos visuales puede hacer que uno se pierda un poco si busca algo específico.
+    La estructura está pensada para cubrir varios objetivos. Mostrar la carrera del piloto, ofrecer noticias y vídeos, y vender merchandising.El menú organiza bien estas secciones, y el flujo de navegación es lógico. Primero la parte visual (hero, fotos, vídeos), después las novedades, y por último el área de tienda.El contenido se presenta de forma clara, aunque en algunos momentos el exceso de estímulos visuales puede hacer que uno se pierda un poco si busca algo específico.
   </p>
 
   <h3>Visual</h3>
   <p>
-    El estilo visual es totalmente coherente con el mundo de la Fórmula 1: colores intensos (naranjas y negros), tipografías angulosas y uso constante de fotografía de alta calidad. El logotipo, los fondos y los gráficos refuerzan la identidad deportiva y juvenil del piloto. La combinación de grandes imágenes, fondos oscuros y toques de color vibrante genera una estética muy reconocible, enérgica y alineada con su marca personal.
+    El estilo visual es totalmente coherente con el mundo de la Fórmula 1: colores intensos (naranjas y negros), tipografías angulosas y uso constante de fotografía de alta calidad.El logotipo, los fondos y los gráficos refuerzan la identidad deportiva y juvenil del piloto.La combinación de grandes imágenes, fondos oscuros y toques de color vibrante genera una estética muy reconocible, enérgica y alineada con su marca personal.
   </p>
 
   <h3>Interacción</h3>
   <p>
-    La web está llena de pequeñas animaciones que acompañan el scroll, galerías dinámicas y efectos de hover en las imágenes y botones. Estas microinteracciones aportan dinamismo, pero también pueden sobrecargar la experiencia si no se controlan bien. Por ejemplo, las transiciones entre secciones son rápidas y visualmente llamativas, lo que ayuda a mantener el interés, aunque puede distraer si el usuario busca información puntual. En conjunto, las animaciones están bien logradas y transmiten la personalidad activa y divertida del deportista.
+    La web está llena de pequeñas animaciones que acompañan el scroll, galerías dinámicas y efectos de hover en las imágenes y botones.Estas microinteracciones aportan dinamismo, pero también pueden sobrecargar la experiencia si no se controlan bien.Por ejemplo, las transiciones entre secciones son rápidas y visualmente llamativas, lo que ayuda a mantener el interés, aunque puede distraer si el usuario busca información puntual.En conjunto, las animaciones están bien logradas y transmiten la personalidad activa y divertida del deportista.
   </p>
 
   <h3>Usabilidad</h3>
   <p>
-    El sitio es intuitivo, con menús visibles y botones claros (buena en general) Sin embargo, la densidad visual puede jugar en contra de la claridad en ciertos apartados, especialmente para usuarios con dispositivos móviles o conexiones lentas. En términos de accesibilidad, algunos textos sobre imágenes podrían tener más contraste y las imágenes necesitarían descripciones alternativas. Aun así, el sitio cumple bien su objetivo: ofrecer una experiencia atractiva para fans y compradores.
+    El sitio es intuitivo, con menús visibles y botones claros (buena en general)Sin embargo, la densidad visual puede jugar en contra de la claridad en ciertos apartados, especialmente para usuarios con dispositivos móviles o conexiones lentas.En términos de accesibilidad, algunos textos sobre imágenes podrían tener más contraste y las imágenes necesitarían descripciones alternativas.Aun así, el sitio cumple bien su objetivo: ofrecer una experiencia atractiva para fans y compradores.
   </p>
 
   <h3>Técnico</h3>
   <p>
-    Desde el punto de vista técnico, la web maneja gran cantidad de contenido multimedia (imágenes, vídeos y animaciones), lo que puede afectar el rendimiento si no está bien optimizado. Probablemente los Core Web Vitals se vean penalizados en LCP (por el peso de las imágenes) y CLS (por la cantidad de transiciones).
+    Desde el punto de vista técnico, la web maneja gran cantidad de contenido multimedia (imágenes, vídeos y animaciones), lo que puede afectar el rendimiento si no está bien optimizado.Probablemente los Core Web Vitals se vean penalizados en LCP (por el peso de las imágenes) y CLS (por la cantidad de transiciones).
   </p>
 
   <h3>Criterios de excelencia</h3>
   <p>
-    La creatividad está completamente orientada a reforzar la marca personal de Lando Norris y transmitir su juventud, energía y diversión. El contenido está adaptado a distintos públicos (fans, prensa y compradores), aunque el foco principal está en la comunidad de seguidores. En cuanto a UX, el sitio logra generar una experiencia emocional fuerte: no solo informa, sino que entretiene. El equilibrio entre forma y función se inclina hacia la forma, pero en este caso está justificado porque la identidad visual es parte esencial del mensaje.
+    La creatividad está completamente orientada a reforzar la marca personal de Lando Norris y transmitir su juventud, energía y diversión.El contenido está adaptado a distintos públicos (fans, prensa y compradores), aunque el foco principal está en la comunidad de seguidores.En cuanto a UX, el sitio logra generar una experiencia emocional fuerte: no solo informa, sino que entretiene.El equilibrio entre forma y función se inclina hacia la forma, pero en este caso está justificado porque la identidad visual es parte esencial del mensaje.
   </p>
 
   <h3>Conclusión — Fortalezas, debilidades y aprendizajes</h3>
@@ -319,7 +344,49 @@
     </main>
 
     <footer>
+      <!-- Botón para subir al inicio: centrado y justo encima del copyright -->
+      <a href="#top" class="scroll-up" aria-label="Ir al inicio">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M18 15l-6-6-6 6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
       <p>© 2025 Web Atelier (UDIT) – Informe de análisis.</p>
     </footer>
+    
+    <!-- Script: mostrar/ocultar botón 'scroll-up' cuando el usuario hace scroll y manejar click con smooth scroll -->
+    <script>
+      (function () {
+        var btn = document.querySelector('.scroll-up');
+        if (!btn) return;
+
+        var threshold = 200; // px scrolled before showing the button
+
+        function prefersReducedMotion() {
+          try {
+            return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          } catch (e) {
+            return false;
+          }
+        }
+
+        function onScroll() {
+          if (window.scrollY > threshold) btn.classList.add('visible');
+          else btn.classList.remove('visible');
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        // initial check
+        onScroll();
+
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (prefersReducedMotion()) {
+            window.scrollTo(0, 0);
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
