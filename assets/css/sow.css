@@ -1,6 +1,3 @@
-/* WEB ATELIER (UDIT) - Student Project Template Styles */
-
-/* Reset and base styles */
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -21,7 +18,6 @@ body {
 	padding: 0;
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -48,7 +44,6 @@ li {
 	margin-bottom: 1rem;
 }
 
-/* Layout */
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -60,14 +55,12 @@ main {
 	padding: 2rem 0;
 }
 
-/* Header */
 header {
 	background: #f8f9fa;
 	padding: 1rem 0;
 	border-bottom: 1px solid #e9ecef;
 }
 
-/* Footer */
 footer {
 	background: #f8f9fa;
 	padding: 2rem 0;
@@ -86,7 +79,6 @@ footer a:hover {
 	text-decoration: underline;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
 	html {
 		font-size: 14px;
@@ -107,14 +99,12 @@ footer a:hover {
 	}
 }
 
-/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
 	}
 }
 
-/* Focus styles for keyboard navigation */
 a:focus,
 button:focus,
 input:focus,
@@ -124,7 +114,6 @@ select:focus {
 	outline-offset: 2px;
 }
 
-/* Skip link for screen readers */
 .skip-link {
 	position: absolute;
 	top: -40px;
@@ -146,19 +135,18 @@ body {
 }
 
 section {
-  min-height: 100vh; /* allow sections to size to content, avoid large empty gaps */
+  min-height: 100vh;
 }
 
-/* Layout wrapper inside each section to align iframe and text side-by-side */
 .section-inner {
   display: flex;
   gap: 2rem;
-  align-items: stretch; /* make children same height */
+  align-items: stretch;
   padding: 2rem;
 }
 
 .section-inner .content {
-  flex: 0 1 50%; /* text/content column: exactly half */
+  flex: 0 1 50%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -174,17 +162,17 @@ section {
 }
 
 .section-inner .media {
-  flex: 0 1 50%; /* iframe column: exactly half */
+  flex: 0 1 50%;
   display: flex;
   align-items: center;
-  justify-content: center; /* center iframe in its column */
+  justify-content: center;
 }
 
 .section-inner .media iframe {
   width: 100%;
   height: 100%;
-  max-height: 1000px; /* doubled max height to allow taller iframes */
-  border: 4px solid #0011ff; /* azul solicitado */
+  max-height: 1000px;
+  border: 4px solid #0011ff;
   border-radius: 12px;
 }
 
@@ -202,7 +190,6 @@ section {
   }
 }
 
-/* Full-width screenshots row below the two-column layout */
 .section-screenshots {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -218,7 +205,6 @@ section {
   border: 1px solid #ccc;
 }
 
-/* Make sure the screenshots row sits below the two-column block without overlap */
 section {
   overflow: visible;
 }
@@ -236,7 +222,6 @@ section {
   }
 }
 
-/* Full-width iframe and text blocks (stacked order) */
 .full-iframe {
   width: 100%;
   padding: 0 2rem;
@@ -271,89 +256,102 @@ header {
   background: #0011ff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 5;
-  left: 5;
-  bottom: 5;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 3rem;
-  
+  padding: clamp(1rem, 2.5vh, 2rem);
+  height: clamp(4rem, 8vh, 6rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 nav {
-  position: fixed;
-  top: 0;
-  right: 0; /* anchor nav to right edge of viewport */
-  z-index: 1000;
-  justify-content: center;
+  margin-left: auto;
 }
+
 nav ul {
-  position: fixed; /* align relative to viewport */
-  top: 1.4rem; /* moved slightly down to align lower */
-    right: 0;
-    display: flex;
-  justify-content: flex-end; /* items right-justified */
-  padding: 0 1rem; /* horizontal padding only */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1rem);
   margin: 0;
+  padding: 0;
   list-style: none;
-  align-items: flex-end; /* align items to container bottom */
 }
+
 nav ul li {
-  margin: 0 10px; /* spacing between items */
-  padding: 0 15px; /* horizontal padding only; vertical size via line-height */
+  margin: 0;
+  padding: clamp(0.3rem, 1vw, 0.8rem) clamp(0.5rem, 1.5vw, 1rem);
   border: 2px solid white;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  line-height: 3rem; /* make li height match .header-left on desktop */
+  transition: all 0.3s ease;
   display: flex;
-  align-items: center; /* vertically center text inside li */
+  align-items: center;
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
-  nav ul li:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el mouse */
+nav ul li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 nav ul li a {
   text-decoration: none;
   color: #ffffff;
+  white-space: nowrap;
 }
 
-/* Texto a la izquierda del header */
 .header-left {
-  position: fixed;
-  left: 1rem;
-  top: 1.4rem;
-  z-index: 1001;
   color: #ffffff;
   font-weight: 700;
   font-style: normal;
   font-family: 'Bitcount Grid Single', sans-serif;
-  font-size: 2.4rem; /* un poco más pequeño */
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   line-height: 1.05;
   padding: 0.25rem 0.5rem;
   background: transparent;
   text-align: left;
+  margin-right: 2rem;
 }
 
-/* Ajustes para evitar solapamiento entre el texto y el nav */
-@media (min-width: 800px) {
-  nav ul {
-    padding-right: 4rem; /* deja espacio al texto izquierdo (.header-left) */
+@media (min-width: 1200px) {
+  header {
+    padding-left: max(2rem, calc((100vw - 1200px) / 2));
+    padding-right: max(2rem, calc((100vw - 1200px) / 2));
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
   .header-left {
-    left: 0.75rem;
-    top: 1.15rem;
-    font-size: 1.8rem; /* un poco más pequeño en móvil */
+    margin-right: 0;
+    text-align: center;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
   }
+  
+  nav {
+    margin-left: 0;
+    width: 100%;
+  }
+  
   nav ul {
-    top: 1.15rem; /* match header-left top */
-    padding: 0 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
+  
   nav ul li {
-    line-height: 2rem; /* match header-left on mobile (increased size) */
+    font-size: 0.875rem;
+    padding: 0.3rem 0.6rem;
   }
 }
 
@@ -374,11 +372,10 @@ nav ul li a {
 }
 @media (min-width: 800px) {
   .analysis-text {
-    columns: 2; /* reducir columnas para mejorar lectura */
+    columns: 2;
   }
 }
 
-/* Evitar que elementos sean cortados entre columnas */
 .analysis-text p,
 .analysis-text h3,
 .analysis-text ul,
@@ -390,16 +387,15 @@ nav ul li a {
 
 .cover {
   display: flex;
-  flex-direction: column; /* apilar panorama y botón verticalmente */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #ffffff; /* fondo blanco para el carrusel */
+  background: #ffffff;
   color: #0011ff;
   padding: 1.25rem 0;
   overflow: hidden;
 }
 
-/* Panorama — carrusel panorámico de texto (left → right) */
 .panorama {
   width: 100%;
   overflow: hidden;
@@ -408,25 +404,23 @@ nav ul li a {
   display: flex;
   width: max-content;
   align-items: center;
-  /* animación que desplaza la pista de 0% a -50% (derecha → izquierda) */
-  animation: scrollLTR 60s linear infinite; /* más lenta */
+  animation: scrollLTR 60s linear infinite;
 }
 .panorama .loop {
   display: flex;
-  gap: 4rem; /* más espacio entre un texto y el siguiente */
+  gap: 4rem;
 }
 .panorama .item {
-  color: #0011ff; /* texto azul */
-  background: #ffffff; /* fondo blanco */
+  color: #0011ff;
+  background: #ffffff;
   font-weight: 700;
   font-family: 'Roboto Condensed', 'Bitcount Grid Single', sans-serif;
-  /* Mucho más grande: escala responsiva con un máximo alto */
   font-size: clamp(4rem, 12vw, 12rem);
   letter-spacing: 0.12em;
-  text-transform: uppercase; /* solo mayúsculas */
-  padding: 0.06rem 0.18rem; /* franja aún más pequeña */
+  text-transform: uppercase;
+  padding: 0.06rem 0.18rem;
   white-space: nowrap;
-  border-radius: 0; /* franja plana */
+  border-radius: 0;
 }
 
 @keyframes scrollLTR {
@@ -434,7 +428,6 @@ nav ul li a {
   100% { transform: translateX(-50%); }
 }
 
-/* Respetar preferencia de reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
   .panorama .track {
     animation: none;
@@ -442,14 +435,13 @@ nav ul li a {
   }
 }
 
-/* Botón circular de scroll hacia abajo (debajo del carrusel) */
 .scroll-down {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 64px;
   height: 64px;
-  margin: 6rem auto 0 auto; /* mayor separación: botón más abajo */
+  margin: 6rem auto 0 auto;
   background: #0011ff;
   color: #ffffff;
   border-radius: 50%;
@@ -469,7 +461,6 @@ nav ul li a {
   box-shadow: 0 12px 28px rgba(0,17,255,0.18);
 }
 
-/* pequeña animación de rebote para llamar la atención */
 .scroll-down { animation: bounce 2.8s ease-in-out infinite; }
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
@@ -481,7 +472,6 @@ nav ul li a {
   .scroll-down svg { width: 20px; height: 20px; }
 }
 
-/* Scroll-up button inside footer (centered) */
 .scroll-up {
   position: fixed;
   bottom: 24px;
@@ -506,7 +496,6 @@ nav ul li a {
 .scroll-up:focus { outline: 3px solid rgba(0,17,255,0.18); outline-offset: 4px; }
 .scroll-up:hover { transform: translateY(-6px) scale(1); box-shadow: 0 12px 28px rgba(0,17,255,0.18); }
 
-/* visible state when user has scrolled down */
 .scroll-up.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -520,7 +509,6 @@ nav ul li a {
 
 @media (max-width: 799px) {
   .panorama .item {
-    /* Aumentar también en móvil pero con límites razonables */
     font-size: clamp(2rem, 8vw, 4rem);
     padding: 0.12rem 0.25rem;
   }
@@ -532,15 +520,14 @@ nav ul li a {
   }
 }
 
-/* Iframes: align to the right on wide screens, full-width on small screens */
 section iframe {
-  display: block; /* treat iframe like a block to apply margins */
+  display: block;
   width: 50%;
   max-width: 100%;
-  height: 800px; /* doubled fallback height */
-  margin-left: auto; /* push to the right */
-  margin-right: 2rem; /* small gap from right edge */
-  margin-bottom: 2.5rem; /* add extra space before screenshots */
+  height: 800px;
+  margin-left: auto;
+  margin-right: 2rem;
+  margin-bottom: 2.5rem;
   border: 4px solid #0011ff;
   border-radius: 12px;
 }
@@ -548,15 +535,14 @@ section iframe {
 @media (max-width: 799px) {
   section iframe {
     width: 100%;
-    margin: 0 0 1.25rem 0; /* slightly larger stack spacing */
-    height: 600px; /* doubled mobile iframe height */
+    margin: 0 0 1.25rem 0;
+    height: 600px;
   }
 }
 
-/* Ensure full-iframe iframes keep full width but use half the previous height */
 .full-iframe iframe {
   width: 100%;
-  height: 400px; /* half of previous 800px */
+  height: 400px;
   max-height: 500px;
   border: 4px solid #0011ff;
   border-radius: 12px;
@@ -564,11 +550,10 @@ section iframe {
 
 @media (max-width: 799px) {
   .full-iframe iframe {
-    height: 300px; /* half of previous mobile 600px */
+    height: 300px;
   }
 }
 
-/* Ensure screenshots section has some top spacing when images follow an iframe */
 .screenshots {
   margin-top: 0.5rem;
 }
@@ -579,7 +564,6 @@ section iframe {
   }
 }
 
-/* Screenshots that live inside the media column (below the iframe) */
 .media .screenshots {
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -600,7 +584,7 @@ h2 {
   font-style: normal;
   padding-left: 2rem;
   padding-top: 2rem;
-  font-size: 2.4rem; /* larger section titles */
+  font-size: 2.4rem;
   line-height: 1.1;
   color: blue;
 }
@@ -627,19 +611,18 @@ h2 {
   }
 }
 
-/* Badges para los encabezados de análisis (h3): versión compacta sin esquinas redondeadas */
 .analysis-text h3,
 .analisis h3 {
   display: inline-block;
-  background: #0011ff; /* mismo azul que el nav */
+  background: #0011ff;
   color: #ffffff;
-  padding: 0.35rem 0.7rem; /* un poco más grande */
-  border-radius: 0; /* esquinas cuadradas */
+  padding: 0.35rem 0.7rem;
+  border-radius: 0;
   margin: 0 0 1rem 0;
-  box-shadow: none; /* apariencia plana */
+  box-shadow: none;
   font-weight: 700;
   line-height: 1;
-  font-size: 1.05rem; /* ligeramente mayor */
+  font-size: 1.05rem;
   vertical-align: middle;
 }
 
