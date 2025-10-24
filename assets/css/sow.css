@@ -374,8 +374,18 @@ nav ul li a {
 }
 @media (min-width: 800px) {
   .analysis-text {
-    columns: 4;
+    columns: 2; /* reducir columnas para mejorar lectura */
   }
+}
+
+/* Evitar que elementos sean cortados entre columnas */
+.analysis-text p,
+.analysis-text h3,
+.analysis-text ul,
+.analysis-text ol {
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
 }
 .cover {
   display: flex;
@@ -392,6 +402,7 @@ nav ul li a {
   border-right: 0.15em solid currentColor;
   font-size: 4rem; /* larger main title */
   line-height: 1.05;
+  color: #ffffff; /* amarillo para el texto y caret */
   animation: typing 3s steps(30, end) forwards,
     blink-caret 0.75s step-end infinite;
 }
